@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.jeff.protomod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "EntityRenderDispatcherMixin",
+    "OptionsInjector",
+    "PauseScreenMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

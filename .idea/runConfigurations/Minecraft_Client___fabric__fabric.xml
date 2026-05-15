@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Minecraft Client (:fabric)" type="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.architectury.transformer.TransformerRuntime"/>
+    <module name="protomod.fabric.main"/>
+    <option name="PROGRAM_PARAMETERS" value=""/>
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=C:\Users\colli\AppData\Roaming\.minecraft\developermods\in@@0020progress\protomod\fabric\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient &quot;-Darchitectury.main.class=C:\Users\colli\AppData\Roaming\.minecraft\developermods\in progress\protomod\fabric\.gradle\architectury\.main_class&quot; &quot;-Darchitectury.runtime.transformer=C:\Users\colli\AppData\Roaming\.minecraft\developermods\in progress\protomod\fabric\.gradle\architectury\.transforms&quot; &quot;-Darchitectury.properties=C:\Users\colli\AppData\Roaming\.minecraft\developermods\in progress\protomod\fabric\.gradle\architectury\.properties&quot; -Djdk.attach.allowAttachSelf=true &quot;-javaagent:C:\Users\colli\AppData\Roaming\.minecraft\developermods\in progress\protomod\.gradle\architectury\architectury-transformer-agent.jar&quot;"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fabric/run/"/>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <envs>
+      
+    </envs>
+    <shortenClasspath name="ARGS_FILE"/>
+  <classpathModifications/></configuration>
+</component>

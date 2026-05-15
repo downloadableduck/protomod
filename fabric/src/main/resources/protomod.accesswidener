@@ -1,0 +1,17 @@
+accessWidener v2 official
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher playerRenderers Ljava/util/Map;
+mutable field net/minecraft/world/entity/EntityType PLAYER Lnet/minecraft/world/entity/EntityType;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher playerSkinRenderCache Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher font Lnet/minecraft/client/gui/Font;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher atlasManager Lnet/minecraft/client/resources/model/sprite/AtlasManager;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher equipmentAssets Lnet/minecraft/client/resources/model/EquipmentAssetManager;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher entityModels Ljava/util/function/Supplier;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher mapRenderer Lnet/minecraft/client/renderer/MapRenderer;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher itemModelResolver Lnet/minecraft/client/renderer/item/ItemModelResolver;
+accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher blockModelResolver Lnet/minecraft/client/renderer/block/BlockModelResolver;
+accessible field net/minecraft/client/player/LocalPlayer wasSprinting Z
+accessible method net/minecraft/client/player/LocalPlayer isMoving ()Z
+accessible class net/minecraft/client/Options$OptionAccess
+accessible class net/minecraft/client/Options$FieldAccess
+accessible method net/minecraft/client/Options readListOfStrings (Ljava/lang/String;)Ljava/util/List;
+accessible field net/minecraft/client/Options GSON Lcom/google/gson/Gson;

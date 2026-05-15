@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.architectury.dev/' }
+        maven { url = 'https://files.minecraftforge.net/maven/' }
+        maven {
+            name = 'NeoForged'
+            url = 'https://maven.neoforged.net/releases'
+        }
+        gradlePluginPortal()
+                maven {
+                    name = 'GeckoLib'
+                    url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+                }
+    }
+}
+
+rootProject.name = 'protomod'
+
+include 'common'
+include 'fabric'
+include 'neoforge'

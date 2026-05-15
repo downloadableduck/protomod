@@ -1,0 +1,11 @@
+/neoforge/run/
+/neoforge/build/
+/neoforge/.gradle/
+/fabric/run/
+/fabric/build/
+/fabric/.gradle/
+/common/run/
+/common/build/
+/common/.gradle/
+/build/
+/.gradle/
