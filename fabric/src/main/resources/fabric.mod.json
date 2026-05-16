@@ -2,25 +2,28 @@
   "schemaVersion": 1,
   "id": "protomod",
   "version": "${version}",
-  "name": "ProtoMod",
+  "name": "Protomod",
   "accessWidener": "protomod.accesswidener",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Become a protogen!",
   "authors": [
-    "Me!"
+    "downloadableduck"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/project/protomod",
+    "sources": "https://github.com/downloadableduck/protomod"
   },
   "license": "CC0-1.0",
   "icon": "assets/protomod/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.jeff.protomod.fabric.ExampleModFabric"
+      "com.jeff.protomod.fabric.ProtomodFabric"
     ],
     "client": [
-      "com.jeff.protomod.fabric.client.ExampleModFabricClient"
+      "com.jeff.protomod.fabric.client.ProtomodFabricClient"
+    ],
+    "modmenu": [
+      "com.jeff.protomod.fabric.client.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -30,9 +33,17 @@
     "fabricloader": ">=0.19.2",
     "minecraft": ">=26.1",
     "java": ">=21",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "geckolib": "*",
+    "modmenu": "*"
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "environment": "client"
+    },
+    "modmenu:api": "com.jeff.protomod.fabric.client.ModMenuIntegration"
   }
 }

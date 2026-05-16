@@ -1,12 +1,12 @@
 package com.jeff.protomod;
 
-import com.geckolib.animatable.GeoAnimatable;
 import com.geckolib.animatable.GeoReplacedEntity;
 import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
 import com.geckolib.animation.AnimationController;
 import com.geckolib.animation.RawAnimation;
 import com.geckolib.animation.object.LoopType;
+import com.geckolib.animation.object.PlayState;
 import com.geckolib.util.GeckoLibUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -40,7 +40,7 @@ public class Protogen implements GeoReplacedEntity {
             if (player != null) {
                 if (player.swingTime > 0) {
                     //cuts off at the end, fix this
-                    animTest.setControllerSpeed(5f);
+                    animTest.setControllerSpeed(6f);
                     if (player.getMainArm().equals(HumanoidArm.LEFT)) {
                         return animTest.setAndContinue(RawAnimation.begin().then("animation.protogen.punch_left", LoopType.PLAY_ONCE));
                     } else {
@@ -48,9 +48,9 @@ public class Protogen implements GeoReplacedEntity {
                     }
                 }
             }
+
             return animTest.setAndContinue(RawAnimation.begin().then("animation.protogen.do_nothing", LoopType.PLAY_ONCE));
         }));
-
         controllers.add(new AnimationController<>("protogen_ride", 0, animTest -> {
             if (player != null) {
                 if (player.isPassenger()) {
@@ -71,10 +71,13 @@ public class Protogen implements GeoReplacedEntity {
 
         controllers.add(new AnimationController<>("protogen_floss", 5, animTest -> {
             if (player != null && isFlossing) {
-                animTest.setControllerSpeed(0.75f);
-                return animTest.setAndContinue(RawAnimation.begin().thenLoop("animation.protogen.floss"));
+                if (animTest.controller().getAnimationSpeed() != 0.75f) {
+                    animTest.setControllerSpeed(0.75f);
+                }
+                return animTest.setAndContinue(RawAnimation.begin().then("animation.protogen.floss", LoopType.LOOP));
+            } else {
+                return animTest.setAndContinue(RawAnimation.begin().then("animation.protogen.do_nothing", LoopType.LOOP));
             }
-            return animTest.setAndContinue(RawAnimation.begin().then("animation.protogen.do_nothing", LoopType.PLAY_ONCE));
         }));
     }
 

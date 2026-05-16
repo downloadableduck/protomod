@@ -25,7 +25,22 @@ public abstract class PauseScreenMixin extends Screen {
         int guiScale = Minecraft.getInstance().options.guiScale().get();
         Window window = Minecraft.getInstance().getWindow();
         int x = (window.getGuiScaledWidth() / 2) + 103;
-        int y = (window.getGuiScaledHeight() / 2) - (guiScale + 2);
+        int y = 0;
+        if ((guiScale == 5 || guiScale == 0 && window.isFullscreen()) || (guiScale == 2 && !window.isFullscreen())) {
+            y = (window.getGuiScaledHeight() / 2) - 2;
+        } else if (guiScale == 1 && !window.isFullscreen()) {
+            y = (window.getGuiScaledHeight()/ 2) - 63;
+        } else if (guiScale == 1 && window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 241;
+        } else if (guiScale == 3 && !window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 2;
+        } else if (guiScale == 3 && window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 42;
+        } else if (guiScale == 4 && !window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 2;
+        } else if (guiScale == 4 && window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 17;
+        }
         this.addRenderableWidget(new Buttons.ProtogenButton(x, y));
     }
 }

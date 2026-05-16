@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ProtoScreen extends Screen {
 
-    protected ProtoScreen(Component title) {
+    public ProtoScreen(Component title) {
         super(title);
     }
 
@@ -20,7 +20,9 @@ public class ProtoScreen extends Screen {
         int xo = (this.width / 2);
         int yo = (this.height / 2);
         int size = 100;
+        if (Minecraft.getInstance().player != null)
         InventoryScreen.extractEntityInInventoryFollowsMouse(graphics, xo -size, yo - size, xo + size, yo + size, 60, 0.0625F, mouseX, mouseY, this.minecraft.player);
+        else graphics.text(Minecraft.getInstance().font, "I.O.U one protogen", xo, yo, 0xFFFFFFFF);
     }
 
     /*@Override
@@ -58,5 +60,10 @@ public class ProtoScreen extends Screen {
         this.addRenderableWidget(new Buttons.OpenResourcePackButton(rightX, height - 75));
         this.addRenderableWidget(new Buttons.FlossButton(rightX, height + 25));
         this.addRenderableWidget(new Buttons.BackToGameButton(width - 75, height + 75));
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
     }
 }

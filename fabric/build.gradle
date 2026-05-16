@@ -16,6 +16,12 @@ repositories {
         name = 'GeckoLib'
         url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
     }
+    repositories {
+        maven {
+            name = "Terraformers"
+            url = "https://maven.terraformersmc.com/"
+        }
+    }
 }
 
 configurations {
@@ -40,6 +46,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     implementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
+    implementation("com.terraformersmc:modmenu:18.0.0-beta.1")
 
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     //modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"

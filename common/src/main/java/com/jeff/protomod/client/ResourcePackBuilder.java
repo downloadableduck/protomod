@@ -32,7 +32,7 @@ public class ResourcePackBuilder {
                     "}");
         }
         try (FileWriter writer = new FileWriter(file)) {
-            writer.write("How to use your own protogen skin: \n1. Make the skin using Blockbench. The bbmodel file is available on our GitHub. \n2. Export the texture as a PNG and copy it. \n3. Paste it into this directory and rename it to 'protogen'. \nFor any questions you may have, please ask me on my GitHub.");
+            writer.write("How to use your own protogen skin: \n1. Make the skin using Blockbench. The bbmodel file is available on our GitHub. \n2. Export the texture as a PNG and copy it. \n3. Paste it into this directory and rename it to 'protogen'. \nFor any questions you may have, please ask me on my GitHub. \nAdditionally, always remember to reload your resource packs when you are done!");
         }
     }
 }

@@ -1,17 +1,20 @@
 modLoader = "javafml"
 loaderVersion = "[10,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/downloadableduck/protomod"
+license = "MIT"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
 
 [[mods]]
 modId = "protomod"
 version = "${version}"
 displayName = "ProtoMod"
-authors = "Me!"
+authors = "downloadableduck"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Become a protogen!
 '''
-#logoFile = ""
+logoFile = "assets/protomod/icon.png"
 
 [[dependencies.protomod]]
 modId = "neoforge"
@@ -24,6 +27,13 @@ side = "BOTH"
 modId = "minecraft"
 type = "required"
 versionRange = "[1.21.10,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.protomod]]
+modId = "geckolib"
+type = "required"
+versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
 

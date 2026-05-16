@@ -15,3 +15,4 @@ accessible class net/minecraft/client/Options$OptionAccess
 accessible class net/minecraft/client/Options$FieldAccess
 accessible method net/minecraft/client/Options readListOfStrings (Ljava/lang/String;)Ljava/util/List;
 accessible field net/minecraft/client/Options GSON Lcom/google/gson/Gson;
+accessible method net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer renderArmorPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/EquipmentSlot;ILnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V
