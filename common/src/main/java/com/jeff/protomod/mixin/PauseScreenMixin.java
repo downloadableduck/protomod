@@ -26,7 +26,7 @@ public abstract class PauseScreenMixin extends Screen {
         Window window = Minecraft.getInstance().getWindow();
         int x = (window.getGuiScaledWidth() / 2) + 103;
         int y = 0;
-        if ((guiScale == 5 || guiScale == 0 && window.isFullscreen()) || (guiScale == 2 && !window.isFullscreen())) {
+        if ((guiScale == 5 || (guiScale == 0 && window.isFullscreen())) || (guiScale == 2 && !window.isFullscreen())) {
             y = (window.getGuiScaledHeight() / 2) - 2;
         } else if (guiScale == 1 && !window.isFullscreen()) {
             y = (window.getGuiScaledHeight()/ 2) - 63;
