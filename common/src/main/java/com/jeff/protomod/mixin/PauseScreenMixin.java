@@ -1,5 +1,6 @@
 package com.jeff.protomod.mixin;
 
+import com.jeff.protomod.Protomod;
 import com.jeff.protomod.client.screen.Buttons;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.platform.Window;
@@ -26,12 +27,16 @@ public abstract class PauseScreenMixin extends Screen {
         Window window = Minecraft.getInstance().getWindow();
         int x = (window.getGuiScaledWidth() / 2) + 103;
         int y = 0;
-        if ((guiScale == 5 || (guiScale == 0 && window.isFullscreen())) || (guiScale == 2 && !window.isFullscreen())) {
+        if (guiScale == 0) {
             y = (window.getGuiScaledHeight() / 2) - 2;
         } else if (guiScale == 1 && !window.isFullscreen()) {
             y = (window.getGuiScaledHeight()/ 2) - 63;
         } else if (guiScale == 1 && window.isFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 241;
+        } else if (guiScale == 2 && window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 92;
+        } else if (guiScale == 2 && !window.isFullscreen()) {
+            y = (window.getGuiScaledHeight() / 2) - 2;
         } else if (guiScale == 3 && !window.isFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 2;
         } else if (guiScale == 3 && window.isFullscreen()) {
@@ -40,6 +45,12 @@ public abstract class PauseScreenMixin extends Screen {
             y = (window.getGuiScaledHeight() / 2) - 2;
         } else if (guiScale == 4 && window.isFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 17;
+        } else if (guiScale == 5) {
+            y = (window.getGuiScaledHeight() / 2) - 2;
+        }
+
+        else {
+            Protomod.LOGGER.error("Ran into an issue with checking the GUI scale! Current scale: {} Fullscreen: {}", guiScale, window.isFullscreen());
         }
         this.addRenderableWidget(new Buttons.ProtogenButton(x, y));
     }

@@ -32,7 +32,7 @@ public class ResourcePackBuilder {
                     "}");
         }
         try (FileWriter writer = new FileWriter(file)) {
-            writer.write("How to use your own protogen skin: \n1. Make the skin using Blockbench. The bbmodel file is available on our GitHub. \n2. Export the texture as a PNG and copy it. \n3. Paste it into this directory and rename it to 'protogen'. \nFor any questions you may have, please ask me on my GitHub. \nAdditionally, always remember to reload your resource packs when you are done!");
+            writer.write("How to use your own protogen skin: \n1. Make the skin using Blockbench. The bbmodel file is available on our GitHub. \n2. Export the texture as a PNG and copy it. \n3. Paste it into this directory and rename it to 'protogen'. \nFor any questions you may have, please ask me on my GitHub. \nAdditionally, always remember to reload your resource packs when you are done! \nAdding the Arms \nCreate a new 'Player - Slim' model in Blockbench. Use the copy brush to copy (ctrl + click) from your protogen and paste (click) on the player's arms. This will be what appears when you are in first person. When your texture is done, place it here and rename it to 'protogen_arms.png'. \nYou don't have to worry about the rest of the model, only the arms will show up!");
         }
     }
 }
