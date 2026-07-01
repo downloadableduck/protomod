@@ -6,12 +6,13 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 
 public final class ProtomodFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        EntityRendererRegistry.register(EntityType.PLAYER, ProtogenRenderer::new);
+        EntityRendererRegistry.register(EntityTypes.PLAYER, ProtogenRenderer::new);
 
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
     }

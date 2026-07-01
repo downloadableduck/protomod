@@ -34,7 +34,7 @@ public class Buttons {
             this.x = x;
             this.y = y;
             super(x, y, 16, 16, Component.literal("Protomod"), (button) -> {
-                Minecraft.getInstance().setScreen(new ProtoScreen(Component.literal("Protomod")));
+                Minecraft.getInstance().gui.setScreen(new ProtoScreen(Component.literal("Protomod")));
             }, Supplier::get);
             this.setTooltip(Tooltip.create(Component.literal("Open Protomod Menu")));
         }
@@ -151,7 +151,7 @@ public class Buttons {
             this.y = y;
             super(x, y, 150, 20, Component.literal("Back to Game"), (a) -> {
                 Protogen.isFlossing = !Protogen.isFlossing;
-                Minecraft.getInstance().setScreen(null);
+                Minecraft.getInstance().gui.setScreen(null);
             }, Supplier::get);
             this.setTooltip(Tooltip.create(Component.literal("Return to the game.")));
         }

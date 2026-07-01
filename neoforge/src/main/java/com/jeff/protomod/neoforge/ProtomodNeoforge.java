@@ -2,6 +2,7 @@ package com.jeff.protomod.neoforge;
 
 import com.jeff.protomod.client.ProtogenRenderer;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,6 +20,6 @@ public final class ProtomodNeoforge {
     }
     @SubscribeEvent
     public void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers registerRenderers) {
-        registerRenderers.registerEntityRenderer(EntityType.PLAYER, ProtogenRenderer::new);
+        registerRenderers.registerEntityRenderer(EntityTypes.PLAYER, ProtogenRenderer::new);
     }
 }
