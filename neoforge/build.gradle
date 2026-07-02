@@ -59,5 +59,6 @@ processResources {
 
 shadowJar {
     configurations = [project.configurations.shadowBundle]
-    archiveClassifier = 'dev-shadow'
+    archiveClassifier.set('')
 }
+tasks.build.dependsOn shadowJar
