@@ -2,6 +2,7 @@ package com.jeff.protomod.client.screen;
 
 import com.jeff.protomod.Protogen;
 import com.jeff.protomod.Protomod;
+import com.mojang.blaze3d.Blaze3D;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -14,9 +15,12 @@ import net.minecraft.util.Util;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
 import java.util.function.Supplier;
 
 import static com.jeff.protomod.Protomod.MOD_ID;
+import static jdk.jfr.consumer.EventStream.openFile;
 
 public class Buttons {
     public static Identifier buttonTexture(boolean isHighlighted) {
@@ -54,7 +58,7 @@ public class Buttons {
             this.x = x;
             this.y = y;
             super(x, y, 150, 20, Component.literal("Open Protogen Resources"), (a) -> {
-                Util.getPlatform().openFile(new File("resourcepacks/protopack/assets/protomod/textures/entity"));
+                    Blaze3D.openPath(new File("resourcepacks/protopack/assets/protomod/textures/entity").toPath());
             }, Supplier::get);
             this.setTooltip(Tooltip.create(Component.literal("Open the directory so that you can paste your new protogen texture into it and use it. A short guide is inside.")));
         }
@@ -102,7 +106,7 @@ public class Buttons {
             this.x = x;
             this.y = y;
             super(x, y, 150, 20, Component.literal("Open Protogen Resources"), (a) -> {
-                Util.getPlatform().openUri("https://github.com/downloadableduck/protomod");
+                Blaze3D.openUri(URI.create("https://github.com/downloadableduck/protomod"));
             }, Supplier::get);
             this.setTooltip(Tooltip.create(Component.literal("Report any issues with Protomod that you find.")));
         }

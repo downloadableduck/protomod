@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import static com.jeff.protomod.Protomod.isProotEnabled;
 
 @Mixin(EntityRenderDispatcher.class)
-public abstract class EntityRenderDispatcherMixin {
+public class EntityRenderDispatcherMixin {
 
     @Unique
     private ProtogenRenderer protomod$protogenRenderer;
@@ -90,7 +90,8 @@ public abstract class EntityRenderDispatcherMixin {
                 dispatcher.equipmentAssets,
                 dispatcher.atlasManager,
                 dispatcher.font,
-                dispatcher.playerSkinRenderCache
+                dispatcher.playerSkinRenderCache,
+                Minecraft.getInstance().getPalettedTextureManager()
         );
 
         this.protomod$protogenRenderer = new ProtogenRenderer(context);

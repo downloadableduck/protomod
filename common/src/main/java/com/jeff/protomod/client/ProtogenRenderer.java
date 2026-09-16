@@ -4,27 +4,17 @@ import com.geckolib.renderer.GeoReplacedEntityRenderer;
 import com.geckolib.renderer.base.BoneSnapshots;
 import com.geckolib.renderer.base.RenderPassInfo;
 import com.jeff.protomod.Protogen;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.player.PlayerModel;
-import net.minecraft.client.renderer.entity.ArmorModelSet;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
+import net.minecraft.client.renderer.entity.player.AvatarRenderer;
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
-import net.minecraft.client.resources.model.EquipmentClientInfo;
-import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.client.renderer.item.ItemModelResolver;
+import net.minecraft.client.renderer.state.level.FirstPersonHandsAndItemsRenderState;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.equipment.EquipmentAsset;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
@@ -39,7 +29,7 @@ public class ProtogenRenderer extends GeoReplacedEntityRenderer<@NotNull Protoge
     public ProtogenRenderer(EntityRendererProvider.Context context) {
         super(context, new ProtogenModel(), new Protogen());
         this.context = context;
-        this.renderer = new EquipmentLayerRenderer(context.getEquipmentAssets(), Minecraft.getInstance().getAtlasManager().getAtlasOrThrow(Identifier.withDefaultNamespace("blocks")));
+        this.renderer = new EquipmentLayerRenderer(context.getEquipmentAssets(), Minecraft.getInstance().getPalettedTextureManager());
         //this.armorLayer= new HumanoidArmorLayer<>(this, new ArmorModelSet(this, this, this, this), new EquipmentLayerRenderer(context.getEquipmentAssets(), Minecraft.getInstance().getAtlasManager().getAtlasOrThrow(Identifier.withDefaultNamespace("blocks"))));
     }
 
@@ -58,9 +48,14 @@ public class ProtogenRenderer extends GeoReplacedEntityRenderer<@NotNull Protoge
     }
 
     @Override
-    public @Nullable HumanoidRenderState createRenderState() {
-        return new HumanoidRenderState();
+    public @Nullable @NotNull LivingEntityRenderState createRenderState() {
+        return new AvatarRenderState();
     }
+
+    /*@Override
+    public AvatarRenderState createRenderState(Protogen animateable, Player relatedObject) {
+        return this.createRenderState();
+    }*/
 
     @Override
     public void adjustModelBonesForRender(@NotNull RenderPassInfo<@NotNull LivingEntityRenderState> state, BoneSnapshots snapshots) {
@@ -72,5 +67,10 @@ public class ProtogenRenderer extends GeoReplacedEntityRenderer<@NotNull Protoge
             boneSnapshot.setRotX(-x);
             boneSnapshot.setRotY(-y);
         });
+    }
+
+    public static void copyFrom(Player player, FirstPersonHandsAndItemsRenderState state) {
+        state.attackHand = player.getUsedItemHand();
+        state.mainHandItem = player.getItemInHand(player.getUsedItemHand());
     }
 }

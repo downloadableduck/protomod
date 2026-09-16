@@ -1,6 +1,6 @@
 accessWidener v2 official
 accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher playerRenderers Ljava/util/Map;
-mutable field net/minecraft/world/entity/EntityType PLAYER Lnet/minecraft/world/entity/EntityType;
+mutable field net/minecraft/world/entity/EntityTypes PLAYER Lnet/minecraft/world/entity/EntityType;
 accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher playerSkinRenderCache Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
 accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher font Lnet/minecraft/client/gui/Font;
 accessible field net/minecraft/client/renderer/entity/EntityRenderDispatcher atlasManager Lnet/minecraft/client/resources/model/sprite/AtlasManager;
@@ -16,3 +16,4 @@ accessible class net/minecraft/client/Options$FieldAccess
 accessible method net/minecraft/client/Options readListOfStrings (Ljava/lang/String;)Ljava/util/List;
 accessible field net/minecraft/client/Options GSON Lcom/google/gson/Gson;
 accessible method net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer renderArmorPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/EquipmentSlot;ILnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V
+mutable field net/minecraft/client/renderer/state/level/PlayerRenderState firstPersonHandsAndItems Lnet/minecraft/client/renderer/state/level/FirstPersonHandsAndItemsRenderState;

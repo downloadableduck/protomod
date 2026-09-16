@@ -14,7 +14,7 @@ authors = "downloadableduck"
 description = '''
 Become a protogen!
 '''
-logoFile = "assets/protomod/icon.png"
+iconFile = "assets/protomod/icon.png"
 
 [[dependencies.protomod]]
 modId = "neoforge"

@@ -29,28 +29,28 @@ public abstract class PauseScreenMixin extends Screen {
         int y = 0;
         if (guiScale == 0) {
             y = (window.getGuiScaledHeight() / 2) - 2;
-        } else if (guiScale == 1 && !window.isFullscreen()) {
+        } else if (guiScale == 1 && !window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight()/ 2) - 63;
-        } else if (guiScale == 1 && window.isFullscreen()) {
+        } else if (guiScale == 1 && window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 241;
-        } else if (guiScale == 2 && window.isFullscreen()) {
+        } else if (guiScale == 2 && window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 92;
-        } else if (guiScale == 2 && !window.isFullscreen()) {
+        } else if (guiScale == 2 && !window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 2;
-        } else if (guiScale == 3 && !window.isFullscreen()) {
+        } else if (guiScale == 3 && !window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 2;
-        } else if (guiScale == 3 && window.isFullscreen()) {
+        } else if (guiScale == 3 && window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 42;
-        } else if (guiScale == 4 && !window.isFullscreen()) {
+        } else if (guiScale == 4 && !window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 2;
-        } else if (guiScale == 4 && window.isFullscreen()) {
+        } else if (guiScale == 4 && window.isExclusiveFullscreen()) {
             y = (window.getGuiScaledHeight() / 2) - 17;
         } else if (guiScale == 5) {
             y = (window.getGuiScaledHeight() / 2) - 2;
         }
 
         else {
-            Protomod.LOGGER.error("Ran into an issue with checking the GUI scale! Current scale: {} Fullscreen: {}", guiScale, window.isFullscreen());
+            Protomod.LOGGER.error("Ran into an issue with checking the GUI scale! Current scale: {} Fullscreen: {}", guiScale, window.isExclusiveFullscreen());
         }
         this.addRenderableWidget(new Buttons.ProtogenButton(x, y));
     }

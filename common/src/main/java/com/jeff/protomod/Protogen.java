@@ -38,7 +38,7 @@ public class Protogen implements GeoReplacedEntity {
 
         controllers.add(new AnimationController<>("protogen_fight", 0, animTest -> {
             if (player != null) {
-                if (player.swingTime > 0) {
+                if (player.getSwingAnimation(Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false)) > 0) {
                     //cuts off at the end, fix this
                     animTest.setControllerSpeed(6f);
                     if (player.getMainArm().equals(HumanoidArm.LEFT)) {
