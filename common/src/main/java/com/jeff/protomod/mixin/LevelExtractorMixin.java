@@ -81,12 +81,12 @@ public abstract class LevelExtractorMixin {
                 }
 
                 Entity sprite = camera.entity();
-                if (sprite instanceof LivingEntity) {
+                /*if (sprite instanceof LivingEntity) {
                     LivingEntity livingEntity = (LivingEntity)sprite;
                     if (livingEntity.isSleeping()) {
                         return;
                     }
-                }
+                }*/
 
                 BlockState viewBlockingState = getViewBlockingState(player, camera.getCullFrustum());
                 if (viewBlockingState != null) {
